@@ -2,7 +2,7 @@
 
 An day to day expense tracker application
 
-# prerequisitesdfsf
+# prerequisite
  1. Node js above 5 or 6
  2. Mongo DB - lastest
  3. Express js
