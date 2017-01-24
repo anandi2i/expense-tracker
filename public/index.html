@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <!-- Loading dependencies -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/angular/angular-csp.css"/>
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular-route.min.js"></script>
+    <!-- Dependencies for angular material -->
+    <script type="text/javascript" src="/bower_components/angular/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular-aria.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular-messages.mi.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-material/angular-material.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css"/>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Front end application starter -->
+    <script  type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-app="expenseTracker">
+     <!--  HTML5 - History API - To prettify the URL -->
+     <base href="/" />
+
+     <link rel="stylesheet" href="home/assets/sass/layout.css"></link>
+     <header class="md-whiteframe-2dp">
+       <div flex layout="row" layout-align="start center">
+         <div flex="5" class="logo" layout="row" layout-align="center">
+           <img src="home/assets/image/logo.png" class="image-size-contain"/>
+         </div>
+         <span flex>Expense Tracker</span>
+         <md-icon style="color:white;">more_vert</md-icon>
+       </div>
+     </header>
+     <nav layout="row" flex>
+       <div flex layout="row" class="nav-side-bar">
+           <div class="nav-item">
+             <md-icon >album</md-icon>
+             Expense
+           </div>
+           <div class="nav-item">
+             <md-icon >monetization_on</md-icon>
+             Categories
+           </div>
+           <div class="nav-item">
+             <md-icon >insert_chart</md-icon>
+             Statistics
+           </div>
+       </div>
+     </nav>
+     <!-- ng-view - Directive for Single Page application -->
+     <div ng-view flex="70" flex-offset="15"></div>
+  </body>
+</html>

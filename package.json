@@ -10,6 +10,7 @@
   "author": "Anand N G",
   "license": "ISC",
   "dependencies": {
+    "angular-material": "^1.1.1",
     "body-parser": "^1.13.3",
     "chai": "^3.5.0",
     "express": "^4.13.3",
@@ -21,6 +22,8 @@
     "underscore-node": "^0.1.2"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
     "should": "^11.1.2",
     "supertest": "^2.0.1"
   }
