@@ -1,0 +1,35 @@
+<div layout="row" flex layout-align="center center">
+  <form name="expenseForm" layout="row" flex layout-align="center center">
+    <div flex="60" layout="column" class="add-new-expense">
+      <div>
+        <span flex="90">Add new expense</span>
+        <span flex></span>
+        <md-icon >add_circle</md-icon>
+      </div>
+
+      <!-- form elements -->
+      <div>
+        <md-input-container class="md-icon-float md-block">
+          <label>Title</label>
+          <md-icon>title</md-icon>
+          <input type="text">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Amount</label>
+          <md-icon>attach_money</md-icon>
+          <input type="number" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Notes</label>
+          <md-icon>note</md-icon>
+          <input name="notes"/>
+          <div ng-messages="expenseForm.notes.$error" role="alert" multiple>
+          </div>
+        </md-input-container>
+        <div layout="row" layout-align="end">
+          <md-button class="md-raised">Close</md-button>
+          <md-button class="md-raised">Create</md-button>
+        </div>
+      </div>
+  </form>
+</div>

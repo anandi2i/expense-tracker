@@ -6,6 +6,10 @@
   var app = express();
   var router = require('./routes/route');
 
+  //Base structure to use static files
+  app.use(express.static(__dirname + '/public'));
+  app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+
   app.use(bodyParser.json()); // parse application/json
   app.use(bodyParser.urlencoded({'extended':'false'}));
   app.use(expressValidator());

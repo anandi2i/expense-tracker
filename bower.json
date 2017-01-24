@@ -1,0 +1,8 @@
+{
+  "name": "expense-tracker",
+  "dependencies": {
+    "angular": "~1.6.1",
+    "dcjs": "~2.1.2",
+    "angular-material": "~1.1.1"
+  }
+}

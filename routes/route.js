@@ -7,9 +7,13 @@
   var ExpenseController = require('../controllers/expense')(Expense);
   var CategoryController = require('../controllers/category')(Category);
 
-  router.get("/",function(req,res){
-      res.status(200).json({"error" : false,"message" : "Try a valid URL."});
+  router.get('*', function(req, res) {
+      res.sendFile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
   });
+
+  // router.get("/",function(req,res){
+  //     res.status(200).json({"error" : false,"message" : "Try a valid URL."});
+  // });
 
 //Expense
   // Get all Expense List
