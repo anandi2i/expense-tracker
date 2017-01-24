@@ -1,0 +1,62 @@
+html {
+  font-family: 'Lato', sans-serif;
+}
+body {
+  height: 100%;
+}
+@mixin headerColor {
+  background-color: #03A9F4;
+}
+@mixin white {
+  color: #fff;
+}
+@mixin light-blue {
+  color: #009688;
+}
+header {
+ @include headerColor;
+ padding: 8px;
+ .logo {
+   height: 35px;
+ }
+ span{
+   @include white;
+ }
+}
+.image-size-contain {
+  max-width: 100%;
+  max-height: 100%;
+}
+.p-0-10 {
+  padding: 0 10px;
+}
+md-icon:hover {
+  cursor: pointer;
+}
+.container {
+}
+.nav-side-bar {
+  color: gray;
+  .nav-item {
+    padding: 10px 25px;
+    margin: 2px 0px;
+    &:hover {
+      background-color: rgba(171, 206, 204, 0.18);
+      cursor: pointer;
+    }
+  }
+  .menu-selected {
+    @include light-blue;
+  }
+}
+/* Expense start */
+.add-new-expense {
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  color: gray;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.57);
+}
+md-input-container {
+  margin: 5px 0;
+}
