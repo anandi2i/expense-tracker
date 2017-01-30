@@ -1,0 +1,22 @@
+<div layout="row" flex layout-align="center center"
+  ng-controller="CategoryController as categoryCtrl"
+  ng-init="categoryCtrl.getCategoryDetails();">
+
+  <md-list ng-cloak flex-sm="90" flex-gt-sm="80" flex-gt-md="60" flex="100" class="category-list">
+    <md-list-item ng-repeat="category in categoryCtrl.category.categoryDetails track by $index"
+    class="category-card" ng-click="categoryCtrl.viewCategoryDialog(category, $event);">
+      <div flex="100" layout="row" layout-align="center center">
+
+        <p flex>{{ category.name }}</p>
+        <!-- <span>
+          <img src="category/assets/image/indian-rupee.png" width="20" height="20"/>
+          {{category.amount}}
+        </span> -->
+      </div>
+    </md-list-item>
+  </md-list>
+  <md-button class="md-fab md-mini md-primary add-new-category-button"
+    ng-click="categoryCtrl.showAddCategoryDialog($event);">
+    <ng-md-icon icon="add" style="fill:#fff" size="18"></ng-md-icon>
+  </md-button>
+</div>

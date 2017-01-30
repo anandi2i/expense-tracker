@@ -27,7 +27,7 @@ module.exports = function() {
     **/
     getCategories: function(req, res) {
       getCategoryList(req, res, function(data) {
-        res.status(200).json({categories: data});
+        res.status(200).json(data);
       });
     },
 
@@ -63,7 +63,7 @@ module.exports = function() {
             });
             return;
           }
-          res.status(200).json({category: data});
+          res.status(200).json(data);
         });
       });
     },
@@ -79,7 +79,7 @@ module.exports = function() {
             });
             return;
           }
-          res.status(200).json({category: updatedCategory});
+          res.status(200).json(updatedCategory);
         });
       });
     },
@@ -93,7 +93,7 @@ module.exports = function() {
           });
           return;
         }
-        res.status(200).json({category: data});
+        res.status(200).json(data);
       });
     }
   }

@@ -1,0 +1,58 @@
+<!-- Template to view an expense -->
+<md-dialog flex="80">
+  <md-toolbar style="background-color: {{expenseCtrl.expense.currentExpense.color || '#2196F3'}}">
+    <div class="md-toolbar-tools">
+      <!-- To make the title as one way binding -->
+      <h2>{{::expenseCtrl.expense.currentExpense.title}}</h2>
+      <span flex></span>
+      <md-button flex="5" class="md-icon-button" ng-click="expenseCtrl.deleteExpense();">
+        <ng-md-icon icon="delete" style="fill:#fff" size="19"></ng-md-icon>
+      </md-button>
+      <md-button class="md-icon-button" ng-click="expenseCtrl.closeDialog();">
+        <ng-md-icon icon="close" style="fill:#fff" size="20"></ng-md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="expenseForm" layout="row" flex layout-align="center center">
+        <div flex="100" layout="column" class="expense-dialog-container">
+            <md-input-container class="md-icon-float md-block">
+              <label>Title</label>
+              <input type="text" required name="title" maxlength="30" ng-model="expenseCtrl.expense.currentExpense.title">
+              <div ng-messages="expenseForm.title.$error">
+                <div ng-message="required" class="my-message">Title should not be empty.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+              <label>Amount</label>
+              <input type="number" required name="amount" maxlength="6" ng-model="expenseCtrl.expense.currentExpense.amount">
+              <div ng-messages="expenseForm.amount.$error">
+                <div ng-message="required" class="my-message">Amount should be valid.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Notes</label>
+              <input name="notes" maxlength="51" ng-model="expenseCtrl.expense.currentExpense.notes" md-maxlength="50"/>
+              <div ng-messages="expenseForm.notes.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">Notes should not be more than 50 characters.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Category</label>
+              <md-select ng-model="expenseCtrl.expense.currentExpense.category.name">
+                <md-option ng-repeat="category in expenseCtrl.expense.categoryDetails" value="{{category.name}}">
+                  {{category.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <div layout="row" layout-align="end">
+              <md-button class="md-raised" ng-click="expenseCtrl.closeDialog();">Close</md-button>
+              <md-button class="md-raised" ng-disabled="expenseForm.$invalid" ng-click="expenseCtrl.updateExpense();">Update</md-button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,25 @@
+<!-- Template to list Expense details  -->
+<div layout="row" flex layout-align="center center"
+  ng-controller="ExpenseController as expenseCtrl"
+  ng-init="expenseCtrl.getExpenseDetails();expenseCtrl.getCategoryDetails();">
+  <!-- List Iteration-->
+  <md-list ng-cloak flex-sm="90" flex-gt-sm="80" flex-gt-md="60" flex="100" class="expense-list">
+    <md-list-item ng-repeat="expense in expenseCtrl.expense.expenseDetails track by $index"
+    class="expense-card" ng-click="expenseCtrl.viewExpenseDialog(expense, $event);">
+      <div flex="100" layout="row" layout-align="center center">
+        <div flex="5">
+          <div style="background-color:{{expense.color || '#2196F3'}};" class="expense-item-color"></div>
+        </div>
+        <p flex>{{ expense.title }}</p>
+        <span>
+          <img src="expense/assets/image/indian-rupee.png" width="20" height="20"/>
+          {{expense.amount}}
+        </span>
+      </div>
+    </md-list-item>
+  </md-list>
+  <md-button class="md-fab md-mini md-primary add-new-expense-button"
+    ng-click="expenseCtrl.showAddExpenseDialog($event);">
+    <ng-md-icon icon="add" style="fill:#fff" size="18"></ng-md-icon>
+  </md-button>
+</div>

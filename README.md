@@ -1,6 +1,6 @@
 # expense-tracker
 
-An day to day expense tracker application
+Expense tracker application
 
 # prerequisite
  1. Node js above 5 or 6
