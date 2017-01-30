@@ -7,38 +7,35 @@
   var ExpenseController = require('../controllers/expense')(Expense);
   var CategoryController = require('../controllers/category')(Category);
 
-  router.get('*', function(req, res) {
-      res.sendFile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+  router.get('/', function(req, res) {
+      res.sendFile('./public/index.html'); // load the single view file
+      //(angular will handle the page changes on the front-end)
   });
-
-  // router.get("/",function(req,res){
-  //     res.status(200).json({"error" : false,"message" : "Try a valid URL."});
-  // });
 
 //Expense
   // Get all Expense List
-  router.get('/expenses', ExpenseController.getExpenses);
+  router.get('/api/expenses', ExpenseController.getExpenses);
 
   // Create new Expense
-  router.post('/expenses', ExpenseController.createExpense);
+  router.post('/api/expenses', ExpenseController.createExpense);
 
   // Update a Expense based on :id
-  router.put('/expenses/:id', ExpenseController.updateExpense);
+  router.put('/api/expenses/:id', ExpenseController.updateExpense);
 
   // Delete a Expense based on :id
-  router.delete('/expenses/:id', ExpenseController.deleteExpense);
+  router.delete('/api/expenses/:id', ExpenseController.deleteExpense);
 
 //Category
   // Get all Category List
-  router.get('/categories', CategoryController.getCategories);
+  router.get('/api/categories', CategoryController.getCategories);
 
   // Create new Category
-  router.post('/categories', CategoryController.createCategory);
+  router.post('/api/categories', CategoryController.createCategory);
 
   // Update a Category based on :id
-  router.put('/categories/:id', CategoryController.updateCategory);
+  router.put('/api/categories/:id', CategoryController.updateCategory);
 
   // Delete a Category based on :id
-  router.delete('/categories/:id', CategoryController.deleteCategory);
+  router.delete('/api/categories/:id', CategoryController.deleteCategory);
 
   module.exports = router;

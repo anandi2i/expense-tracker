@@ -1,0 +1,28 @@
+/* Category start */
+md-input-container {
+  margin: 5px 0; }
+
+.category-list {
+  padding: 30px; }
+
+.category-card {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.12);
+  border-radius: 5px;
+  border-bottom: none; }
+  .category-card:hover {
+    cursor: pointer; }
+
+.add-new-category-button {
+  position: fixed;
+  bottom: 15px;
+  right: 5px;
+  background-color: #03A9F4 !important; }
+
+.category-item-color {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%; }
+
+.header-color {
+  background-color: #03A9F4 !important; }

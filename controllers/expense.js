@@ -4,11 +4,13 @@
    */
   var mongoose = require('mongoose'),
     Expense = mongoose.model('Expense'),
+    Category = mongoose.model('Category'),
     _ = require('underscore-node');
   module.exports = function() {
     return {
       getExpenses: function(req, res) {
-        Expense.find({}, function(err, expenseList){
+
+        Expense.find({}).populate('category').exec(function(err, expenseList){
           if(err) {
             res.status(500).json({
               msg: "Error occured while getting expese List",
@@ -16,7 +18,7 @@
             });
             return;
           }
-          res.status(200).json({expenses: expenseList});
+          res.status(200).json(expenseList);
         });
       },
       createExpense: function(req, res) {
@@ -37,7 +39,11 @@
             });
             return;
           }
-          res.status(200).json({expense: data});
+          Category.populate(data, {
+            path: "category"
+          }, function(err, updatedExpense) {
+            res.status(200).json(updatedExpense);
+          });
         });
       },
 
@@ -52,7 +58,11 @@
               });
               return;
             }
-            res.status(200).json({expense: updatedExpense});
+            Category.populate(updatedExpense, {
+              path: "category"
+            }, function(err, updateVal) {
+              res.status(200).json(updateVal);
+            });
           });
         });
       },
@@ -66,7 +76,7 @@
             });
             return;
           }
-          res.status(200).json({expense: data});
+          res.status(200).json(data);
         });
       }
     }

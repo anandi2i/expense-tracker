@@ -1,0 +1,33 @@
+
+/* Expense start */
+md-input-container {
+  margin: 5px 0;
+}
+.expense-list {
+  padding: 30px;
+}
+.expense-card {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.12);
+  border-radius: 5px;
+  border-bottom: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.add-new-expense-button {
+  position: fixed;
+  bottom: 15px;
+  right: 5px;
+  background-color: #03A9F4 !important;
+}
+.expense-item-color {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+.expense-dialog-container {
+}
+.header-color {
+  background-color: #03A9F4 !important;
+}

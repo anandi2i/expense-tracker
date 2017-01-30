@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="/bower_components/angular/angular-csp.css"/>
     <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular-mocks.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular-resource.min.js"></script>
     <!-- Dependencies for angular material -->
     <script type="text/javascript" src="/bower_components/angular/angular-animate.min.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular-aria.min.js"></script>
@@ -13,42 +15,52 @@
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css"/>
 
     <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <!-- Front end application starter -->
-    <script  type="text/javascript" src="app.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+    <!-- underscore library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- style.css - Base css for header, footer, sub header and others -->
+    <link rel="stylesheet" href="/assets/sass/style.css"></link>
+
   </head>
+  <!-- Semantics are followed as per HTML5 -->
   <body ng-app="expenseTracker">
      <!--  HTML5 - History API - To prettify the URL -->
-     <base href="/" />
-
-     <link rel="stylesheet" href="home/assets/sass/layout.css"></link>
+     <base href="/">
+     <!-- Header -->
      <header class="md-whiteframe-2dp">
-       <div flex layout="row" layout-align="start center">
+       <div flex layout="row" layout-align="center center">
          <div flex="5" class="logo" layout="row" layout-align="center">
-           <img src="home/assets/image/logo.png" class="image-size-contain"/>
+           <img src="/assets/image/logo.png" class="image-size-contain"/>
          </div>
-         <span flex>Expense Tracker</span>
-         <md-icon style="color:white;">more_vert</md-icon>
+         <span>Expense Tracker</span>
        </div>
      </header>
+     <!-- Navigation links -->
      <nav layout="row" flex>
        <div flex layout="row" class="nav-side-bar">
-           <div class="nav-item">
-             <md-icon >album</md-icon>
+           <a class="nav-item" layout="row" layout-align="center center" href="/expense">
+             <ng-md-icon icon="grain" style="fill: gray" size="18"></ng-md-icon>
              Expense
-           </div>
-           <div class="nav-item">
-             <md-icon >monetization_on</md-icon>
+           </a>
+           <a class="nav-item" layout="row" layout-align="center center" href="/category">
+             <ng-md-icon icon="attach_money" style="fill: gray" size="18"></ng-md-icon>
              Categories
-           </div>
-           <div class="nav-item">
-             <md-icon >insert_chart</md-icon>
+           </a>
+           <a class="nav-item" layout="row" layout-align="center center">
+             <ng-md-icon icon="insert_chart" style="fill: gray" size="18"></ng-md-icon>
              Statistics
-           </div>
+           </a>
        </div>
      </nav>
+
      <!-- ng-view - Directive for Single Page application -->
-     <div ng-view flex="70" flex-offset="15"></div>
+     <div ng-view flex="100"></div>
+
+     <!-- Front end application starter -->
+     <script  type="text/javascript" src="app.js"></script>
+     <script  type="text/javascript" src="expense/app.js"></script>
+     <script  type="text/javascript" src="category/app.js"></script>
+     <link rel="stylesheet" href="expense/assets/sass/layout.css"/>
+     <link rel="stylesheet" href="category/assets/sass/layout.css"/>
   </body>
 </html>

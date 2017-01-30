@@ -1,0 +1,33 @@
+<md-dialog flex="80">
+  <md-toolbar style="background-color: #2196F3;">
+    <div class="md-toolbar-tools">
+      <h2>Add new category</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="categoryCtrl.closeDialog();">
+        <ng-md-icon icon="close" style="fill:#fff" size="20"></ng-md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="categoryCreateForm" layout="row" flex layout-align="center center">
+        <div flex="100" layout="column" class="category-dialog-container">
+
+            <md-input-container class="md-block">
+              <label>Name</label>
+              <input name="name" maxlength="16" ng-model="categoryCtrl.category.newCategory.name" md-maxlength="15"/>
+              <div ng-messages="categoryCreateForm.name.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">Notes should not be more than 50 characters.</div>
+              </div>
+            </md-input-container>
+
+            <div layout="row" layout-align="end">
+              <md-button class="md-raised" ng-click="categoryCtrl.closeDialog();">Close</md-button>
+              <md-button class="md-raised" ng-disabled="categoryCreateForm.$invalid" ng-click="categoryCtrl.createCategory();">Create</md-button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </md-dialog-content>
+</md-dialog>
