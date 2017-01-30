@@ -14,10 +14,10 @@
       notes: {
         type: String
       },
-      categories:[{
+      category:{
         type: mongoSchema.ObjectId,
         ref: 'Category'
-      }],
+      },
       spent_on: {
         type: Date,
         default: Date.now

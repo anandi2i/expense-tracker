@@ -1,0 +1,36 @@
+<md-dialog flex="80">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{::categoryCtrl.category.currentCategory.name}}</h2>
+      <span flex></span>
+      <md-button flex="5" class="md-icon-button" ng-click="categoryCtrl.deleteCategory();">
+        <ng-md-icon icon="delete" style="fill:#fff" size="19"></ng-md-icon>
+      </md-button>
+      <md-button class="md-icon-button" ng-click="categoryCtrl.closeDialog();">
+        <ng-md-icon icon="close" style="fill:#fff" size="20"></ng-md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="categoryForm" layout="row" flex layout-align="center center">
+        <div flex="100" layout="column" class="category-dialog-container">
+
+            <md-input-container class="md-block">
+              <label>Name</label>
+              <input name="name" maxlength="15" required ng-model="categoryCtrl.category.currentCategory.name" md-maxlength="15"/>
+              <div ng-messages="categoryForm.name.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">Name should not be more than 15 characters.</div>
+              </div>
+            </md-input-container>
+
+            <div layout="row" layout-align="end">
+              <md-button class="md-raised" ng-click="categoryCtrl.closeDialog();">Close</md-button>
+              <md-button class="md-raised" ng-disabled="categoryForm.$invalid" ng-click="categoryCtrl.updateCategory();">Update</md-button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </md-dialog-content>
+</md-dialog>
